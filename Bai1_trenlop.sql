@@ -23,7 +23,7 @@ CREATE TABLE Cart (
 	FOREIGN KEY (UserId) REFERENCES Users(ID),
     Total FLOAT NOT NULL
 );
-e
+
 CREATE TABLE CartItems (
 	ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     CartID INT,
@@ -32,4 +32,7 @@ CREATE TABLE CartItems (
     FOREIGN KEY (ProductID) REFERENCES Product(ID),
     Quantity INT NOT NULL
 );
+
+ALTER TABLE Users
+DROP COLUMN Email;
 
