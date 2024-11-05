@@ -30,3 +30,27 @@ CREATE TABLE Achitect (
     Address VARCHAR(255)
 );
 
+CREATE TABLE Building (
+	ID INT PRIMARY KEY,
+    BuildingName VARCHAR(45),
+    Address VARCHAR(45),
+	City VARCHAR(45),
+    Cost FLOAT,
+    StartTime DATE,
+    Host_ID INT
+);
+
+CREATE TABLE Design (
+	Building_ID INT,
+    Achitect_ID INT,
+    Benefit VARCHAR(45),
+    FOREIGN KEY (Building_ID) REFERENCES Building(ID),
+    FOREIGN KEY (Achitect_ID) REFERENCES Achitect(ID)
+)
+;
+CREATE TABLE Work (
+	Building_ID INT,
+    Worker_ID INT PRIMARY KEY,
+    DateOfWork DATE,
+    Total VARCHAR(45)
+)
